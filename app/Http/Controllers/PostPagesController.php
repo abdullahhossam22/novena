@@ -36,36 +36,27 @@ class PostPagesController extends Controller
         return to_route('confirmation.index');
     }
 
-    function StoreAppointment(Request $request){
+    function StoreAppointment(){
 
-        $request->all();
+        request()->all();
 
-        $validateData = $request->validate([
+        request()->validate([
             'department' => 'required',
             'doctor' => 'required' ,
             'date' => 'required',
             'time' => 'required',
             'name' => 'required',
-            'phone' => 'required|numeric',
-            'message' => 'required',
+            'phone' => 'required',
+            'message' => 'required'
         ]);
         
-        $appointment = new Appointment();
-
-        $appointment->doctor = $validateData['doctor'];
-        // $appointment->doctor = $validateData['doctor'];
-        // $appointment->doctor = $validateData['doctor'];
-        // $appointment->doctor = $validateData['doctor'];
-        // $appointment->doctor = $validateData['doctor'];
-        // $appointment->doctor = $validateData['doctor'];
-       var_dump($appointment->doctor);
-        // $department = request()->department;
-        // $doctor = request()->doctor;
-        // $date = request()->date;
-        // $time = request()->time;
-        // $name = request()->name;
-        // $phone = request()->phone;
-        // $message = request()->message;
+        $department = request()->department;
+        $doctor = request()->doctor;
+        $date = request()->date;
+        $time = request()->time;
+        $name = request()->name;
+        $phone = request()->phone;
+        $message = request()->message;
 
         appointment::create([
             'department' => $department , 
@@ -80,5 +71,4 @@ class PostPagesController extends Controller
         return to_route('confirmationAPP.index');
     }
 
-    
 }
