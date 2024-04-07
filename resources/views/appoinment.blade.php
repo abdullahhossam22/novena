@@ -40,7 +40,7 @@
                     <div class="row">
                          <div class="col-lg-6">
                             <div class="form-group">
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select name="department" class="form-control" id="exampleFormControlSelect1">
                                   <option>Select Department </option>
                                   <option value="Opthomology">Opthomology</option>
                                   <option value="Cardiology">Cardiology</option>
